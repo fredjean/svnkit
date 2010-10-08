@@ -72,7 +72,7 @@ public class HTTPStatus {
                 to = length;
             }
             try {
-                code = Integer.parseInt(statusLine.substring(at, to));
+                code = Integer.parseInt(statusLine.substring(at, to).trim());
             } catch (NumberFormatException e) {
                 throw new ParseException("Unable to parse status code from status line: '" + statusLine + "'", 0);
             }
@@ -84,7 +84,7 @@ public class HTTPStatus {
                 reason = "";
             }
         } catch (StringIndexOutOfBoundsException e) {
-            throw new ParseException("Status-Line '" + statusLine + "' is not valid", 0); 
+            throw new ParseException("Status-Line '" + statusLine + "' is not valid", 0);
         }
         return new HTTPStatus(version, reason, code, statusLine); 
     }
