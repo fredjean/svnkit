@@ -1,3 +1,10 @@
 *.iml
 *.ipr
 *.iws
+build
+contrib/javahl/bin
+contrib/sequence/bin
+svnkit-cli/bin
+svnkit/bin
+target
+
